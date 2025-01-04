@@ -26,13 +26,36 @@ modules:
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
+      - bootc
+      - borgbackup
       - brave-browser
-      - nerd-fonts
-      - wezterm
-      - zsh
-      - fastfetch
-      - neovim
       - ddcutil
+      - fastfetch
+      - gcc
+      - git-crendential-libsecret
+      - input-leap
+      - jetbrains-mono-fonts-all
+      - lm_sensors
+      - make
+      - neovim
+      - nerd-fonts
+      - usbmuxd
+      - util-linux
+      - wezterm
+      - wireguard-tools
+      - wl-clipboard
+      - zsh
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-gsconnect
+      - nautilus-gsconnect
+      - nautilus-open-any-terminal
+      - openssh-askpass
+      - simple-scan
+      - yaru-theme
+      - zenity
     optfix:
       - brave.com
     remove:
