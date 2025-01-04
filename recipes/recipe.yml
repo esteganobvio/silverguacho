@@ -1,13 +1,10 @@
 ---
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: silverguacho
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41 # latest is also supported if you want new updates ASAP
+image-version: 41
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,22 +17,40 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      # wezterm
+      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+      # nerd-fonts fallback
+      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
+      # Brave browser
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    keys:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
-      - micro
-      - starship
+      - brave-browser
+      - nerd-fonts
+      - wezterm
+      - zsh
+      - fastfetch
+      - neovim
+      - ddcutil
+    optfix:
+      - brave.com
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+  - type: script
+    snippets:
+      - "ln -sf /usr/lib/opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable"
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
-        - org.mozilla.firefox
         - org.gnome.Loupe
+        - it.mijorus.gearlever
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
