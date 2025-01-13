@@ -1,0 +1,71 @@
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: rpm-ostree
+    repos:
+      # wezterm
+      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+      # nerd-fonts fallback
+      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
+      # Brave browser
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    keys:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    install:
+      - bootc
+      - borgbackup
+      - brave-browser
+      - ddcutil
+      - fastfetch
+      - gcc
+      - git-credential-libsecret
+      - input-leap
+      - jetbrains-mono-fonts-all
+      - lm_sensors
+      - make
+      - neovim
+      - nerd-fonts
+      - usbmuxd
+      - util-linux
+      - wezterm
+      - wireguard-tools
+      - wl-clipboard
+      - zsh
+      - syncthing
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-gsconnect
+      - nautilus-gsconnect
+      - openssh-askpass
+      - simple-scan
+      - yaru-theme
+      - zenity
+    optfix:
+      - brave.com
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+  - type: script
+    snippets:
+      - "ln -sf /usr/lib/opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable"
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      install:
+        - org.gnome.Loupe
+        - it.mijorus.gearlever
+      remove:
+        - org.gnome.eog
+    user: {} # Also add Flathub user repo, but no user packages
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
