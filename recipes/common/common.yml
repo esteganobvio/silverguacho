@@ -6,8 +6,8 @@ modules:
 
   - type: rpm-ostree
     repos:
-      # wezterm
-      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+      # ghostty
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
       # nerd-fonts fallback
       - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
       # Brave browser
@@ -20,6 +20,7 @@ modules:
       - brave-browser
       - ddcutil
       - fastfetch
+      - btop
       - gcc
       - git-credential-libsecret
       - input-leap
@@ -28,9 +29,11 @@ modules:
       - make
       - neovim
       - nerd-fonts
+      - rsms-inter-fonts
+      - rsms-inter-vf-fonts
       - usbmuxd
       - util-linux
-      - wezterm
+      - ghostty
       - wireguard-tools
       - wl-clipboard
       - zsh
@@ -48,8 +51,6 @@ modules:
     optfix:
       - brave.com
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
   - type: script
