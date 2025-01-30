@@ -40,7 +40,6 @@ modules:
       - syncthing
       - gnome-shell-extension-pop-shell
       - gnome-shell-extension-pop-shell-shortcut-overrides
-      - gnome-shell-extension-freon
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-caffeine
@@ -69,6 +68,15 @@ modules:
       install:
         - org.gnome.Loupe
         - it.mijorus.gearlever
+        - org.gnome.Snapshot
+        - org.gnome.Weather
+        - org.gnome.World.PikaBackup
+        - org.gnome.seahorse.Application
+        - org.keepassxc.KeePassXC
+        - org.localsend.localsend_app
+        - com.mattjakeman.ExtensionManager
+        - com.obsproject.Studio
+        - com.obsproject.Studio.Plugin.DroidCam
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
