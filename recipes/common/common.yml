@@ -36,7 +36,7 @@ modules:
       - usbmuxd
       - util-linux
       - ghostty
-      - wezterm-nightly
+      - wezterm
       - wireguard-tools
       - wl-clipboard
       - zsh
