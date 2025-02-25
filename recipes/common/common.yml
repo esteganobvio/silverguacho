@@ -70,17 +70,20 @@ modules:
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
-        - org.gnome.Loupe
+        - com.mattjakeman.ExtensionManager
+        - com.obsproject.Studio
+        - com.obsproject.Studio.Plugin.DroidCam
+        - com.protonvpn.www
         - it.mijorus.gearlever
+        - org.gnome.Calendar
+        - org.gnome.Firmware
+        - org.gnome.Loupe
         - org.gnome.Snapshot
         - org.gnome.Weather
         - org.gnome.World.PikaBackup
         - org.gnome.seahorse.Application
         - org.keepassxc.KeePassXC
         - org.localsend.localsend_app
-        - com.mattjakeman.ExtensionManager
-        - com.obsproject.Studio
-        - com.obsproject.Studio.Plugin.DroidCam
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
