@@ -26,7 +26,6 @@ modules:
       - btop
       - gcc
       - git-credential-libsecret
-      - input-leap
       - jetbrains-mono-fonts-all
       - lm_sensors
       - make
@@ -74,6 +73,7 @@ modules:
         - com.obsproject.Studio
         - com.obsproject.Studio.Plugin.DroidCam
         - com.protonvpn.www
+        - io.github.input_leap.input-leap
         - it.mijorus.gearlever
         - org.gnome.Calendar
         - org.gnome.Firmware
