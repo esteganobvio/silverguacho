@@ -10,3 +10,4 @@ image-version: 41
 # you can include multiple instances of the same module
 modules:
   - from-file: common/common.yml
+  - from-file: common/virt-modules.yml
