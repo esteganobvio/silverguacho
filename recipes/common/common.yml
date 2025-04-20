@@ -1,3 +1,4 @@
+---
 modules:
   - type: files
     files:
@@ -6,20 +7,10 @@ modules:
 
   - type: rpm-ostree
     repos:
-      # ghostty
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
-      # wezterm
-      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-      # nerd-fonts fallback
       - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
-      # Brave browser
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-    keys:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
       - bootc
       - borgbackup
-      - brave-browser
       - ddcutil
       - intel-undervolt
       - fastfetch
@@ -35,8 +26,7 @@ modules:
       - rsms-inter-vf-fonts
       - usbmuxd
       - util-linux
-      - ghostty
-      - wezterm
+      - kitty
       - wireguard-tools
       - wl-clipboard
       - zsh
@@ -55,20 +45,17 @@ modules:
       - simple-scan
       - yaru-theme
       - zenity
-    optfix:
-      - brave.com
     remove:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-  - type: script
-    snippets:
-      - "ln -sf /usr/lib/opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable"
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
+        - com.brave.Browser
+        - org.gnome.Papers
         - com.mattjakeman.ExtensionManager
         - com.obsproject.Studio
         - com.obsproject.Studio.Plugin.DroidCam
