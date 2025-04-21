@@ -35,6 +35,7 @@ modules:
       - usbmuxd
       - util-linux
       - kitty
+      - firewall-config
       - wireguard-tools
       - wl-clipboard
       - zsh
