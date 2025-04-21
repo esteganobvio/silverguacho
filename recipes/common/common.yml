@@ -37,6 +37,7 @@ modules:
       - wl-clipboard
       - zsh
       - syncthing
+      - gnome-tweaks
       - gnome-shell-extension-pop-shell
       - gnome-shell-extension-pop-shell-shortcut-overrides
       - gnome-shell-extension-appindicator
