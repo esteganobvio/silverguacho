@@ -9,6 +9,8 @@ modules:
     repos:
       # Docker repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
+      # Ghostty
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
       # Nerd fonts fallback
       - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
       # Brave browser
@@ -19,6 +21,8 @@ modules:
       - bootc
       - borgbackup
       - brave-browser
+      - keepassxc
+      - ghostty
       - ddcutil
       - intel-undervolt
       - fastfetch
@@ -90,7 +94,6 @@ modules:
         - org.gnome.Weather
         - org.gnome.World.PikaBackup
         - org.gnome.seahorse.Application
-        - org.keepassxc.KeePassXC
         - org.localsend.localsend_app
       remove:
         - org.gnome.eog
