@@ -4,8 +4,7 @@ name: silverguacho
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41
-
+image-version: 42
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
