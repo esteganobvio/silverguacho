@@ -11,6 +11,8 @@ modules:
       - https://download.docker.com/linux/fedora/docker-ce.repo
       # Ghostty
       - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
+      # Wezterm
+      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
       # Nerd fonts fallback
       - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
       # Brave browser
@@ -24,6 +26,7 @@ modules:
       - borgbackup
       - brave-browser
       - keepassxc
+      - wezterm
       - ghostty
       - ddcutil
       - intel-undervolt
