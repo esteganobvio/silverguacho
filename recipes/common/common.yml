@@ -83,28 +83,28 @@ modules:
       - "ln -sf /usr/lib/opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable"
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
+    configurations:
+      - notify: false
+        scope: system
       # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.gnome.Papers
-        - com.mattjakeman.ExtensionManager
-        - com.obsproject.Studio
-        - com.obsproject.Studio.Plugin.DroidCam
-        - com.protonvpn.www
-        - io.github.input_leap.input-leap
-        - it.mijorus.gearlever
-        - org.gnome.Calendar
-        - org.gnome.Firmware
-        - org.gnome.Loupe
-        - org.gnome.Snapshot
-        - org.gnome.Weather
-        - org.gnome.World.PikaBackup
-        - org.gnome.seahorse.Application
-        - org.localsend.localsend_app
-      remove:
-        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
+        install:
+          - org.gnome.Papers
+          - com.mattjakeman.ExtensionManager
+          - com.obsproject.Studio
+          - com.obsproject.Studio.Plugin.DroidCam
+          - com.protonvpn.www
+          - io.github.input_leap.input-leap
+          - it.mijorus.gearlever
+          - org.gnome.Calendar
+          - org.gnome.Firmware
+          - org.gnome.Loupe
+          - org.gnome.Snapshot
+          - org.gnome.Weather
+          - org.gnome.World.PikaBackup
+          - org.gnome.seahorse.Application
+          - org.localsend.localsend_app
+        remove:
+          - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
