@@ -1,0 +1,8 @@
+---
+modules:
+  - type: os-release
+    properties:
+      ID: silverguacho
+      NAME: SilverGuacho
+      ID_LIKE: fedora
+      PRETTY_NAME: SilverGuacho
