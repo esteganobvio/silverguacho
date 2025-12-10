@@ -5,108 +5,113 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      # Docker repo
-      - https://download.docker.com/linux/fedora/docker-ce.repo
-      # Ghostty
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
-      # Wezterm
-      - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-      # Nerd fonts fallback
-      - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
-      # Brave browser
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      # Tailscale
-      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-    keys:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+      files:
+        # Docker repo
+        - https://download.docker.com/linux/fedora/docker-ce.repo
+        # Ghostty
+        - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
+        # Wezterm
+        - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+        # Nerd fonts fallback
+        - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
+        # Brave browser
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+        # Tailscale
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      keys:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
-      # themes and fonts
-      - jetbrains-mono-fonts-all
-      - nerd-fonts
-      - rsms-inter-fonts
-      - rsms-inter-vf-fonts
-      - yaru-theme
-      # system tools
-      - bootc
-      - borgbackup
-      - brave-browser
-      - keepassxc
-      - ddcutil
-      - intel-undervolt
-      - btop
-      - gcc
-      - git-credential-libsecret
-      - lm_sensors
-      - make
-      - usbmuxd
-      - util-linux
-      - openssh-askpass
-      - inotify-tools
-      - tuned
-      - tuned-ppd
-      - fd-find
-      - ripgrep
-      - zoxide
-      - openrgb-udev-rules
-      # terminals and tools
-      - ghostty
-      - kitty
-      - wezterm
-      - fastfetch
-      - neovim
-      - zsh
-      # graphical tools
-      - mpv
-      - playerctl
-      - syncthing
-      - wl-clipboard
-      - gnome-tweaks
-      - gnome-shell-extension-pop-shell
-      - gnome-shell-extension-pop-shell-shortcut-overrides
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-blur-my-shell
-      - gnome-shell-extension-caffeine
-      - gnome-shell-extension-dash-to-dock
-      - gnome-shell-extension-gsconnect
-      - gnome-shell-extension-gpaste
-      - gpaste
-      - nautilus-gsconnect
-      - simple-scan
-      - zenity
-      # networking
-      - NetworkManager-openconnect
-      - NetworkManager-openconnect-gnome
-      - NetworkManager-openvpn
-      - NetworkManager-openvpn-gnome
-      - bluez
-      - bluez-tools
-      - firewall-config
-      - iwd
-      - wireguard-tools
-      # Tailscale
-      - tailscale
-      # waydroid
-      - waydroid
-      # Docker
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      # rocm
-      - rocminfo
-      - rocm-hip
-      # steam
-      - steam
-      - steam-devices
-      - gamescope
+      skip-unavailable: true
+      install-weak-deps: true
+      packages:
+        # themes and fonts
+        - jetbrains-mono-fonts-all
+        - nerd-fonts
+        - rsms-inter-fonts
+        - rsms-inter-vf-fonts
+        - yaru-theme
+        # system tools
+        - bootc
+        - borgbackup
+        - brave-browser
+        - keepassxc
+        - ddcutil
+        - intel-undervolt
+        - btop
+        - gcc
+        - git-credential-libsecret
+        - lm_sensors
+        - make
+        - usbmuxd
+        - util-linux
+        - openssh-askpass
+        - inotify-tools
+        - tuned
+        - tuned-ppd
+        - fd-find
+        - ripgrep
+        - zoxide
+        - openrgb-udev-rules
+        # terminals and tools
+        - ghostty
+        - kitty
+        - wezterm
+        - fastfetch
+        - neovim
+        - zsh
+        # graphical tools
+        - mpv
+        - playerctl
+        - syncthing
+        - wl-clipboard
+        - gnome-tweaks
+        - gnome-shell-extension-pop-shell
+        - gnome-shell-extension-pop-shell-shortcut-overrides
+        - gnome-shell-extension-appindicator
+        - gnome-shell-extension-blur-my-shell
+        - gnome-shell-extension-caffeine
+        - gnome-shell-extension-dash-to-dock
+        - gnome-shell-extension-gsconnect
+        - gnome-shell-extension-gpaste
+        - gpaste
+        - nautilus-gsconnect
+        - simple-scan
+        - zenity
+        # networking
+        - NetworkManager-openconnect
+        - NetworkManager-openconnect-gnome
+        - NetworkManager-openvpn
+        - NetworkManager-openvpn-gnome
+        - bluez
+        - bluez-tools
+        - firewall-config
+        - iwd
+        - wireguard-tools
+        # Tailscale
+        - tailscale
+        # waydroid
+        - waydroid
+        # Docker
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        # rocm
+        - rocminfo
+        - rocm-hip
+        # steam
+        - steam
+        - steam-devices
+        - gamescope
     optfix:
       - brave.com
     remove:
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      packages:
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: script
     snippets:
