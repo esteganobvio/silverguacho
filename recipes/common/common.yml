@@ -44,8 +44,6 @@ modules:
       - usbmuxd
       - util-linux
       - kitty
-      - firewall-config
-      - wireguard-tools
       - wl-clipboard
       - zsh
       - syncthing
@@ -64,6 +62,16 @@ modules:
       - simple-scan
       - yaru-theme
       - zenity
+      # networking
+      - NetworkManager-openconnect
+      - NetworkManager-openconnect-gnome
+      - NetworkManager-openvpn
+      - NetworkManager-openvpn-gnome
+      - bluez
+      - bluez-tools
+      - firewall-config
+      - iwd
+      - wireguard-tools
       # Tailscale
       - tailscale
       # Docker
