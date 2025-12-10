@@ -22,31 +22,46 @@ modules:
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
+      # themes and fonts
+      - jetbrains-mono-fonts-all
+      - nerd-fonts
+      - rsms-inter-fonts
+      - rsms-inter-vf-fonts
+      - yaru-theme
+      # system tools
       - bootc
       - borgbackup
       - brave-browser
       - keepassxc
-      - wezterm
-      - ghostty
       - ddcutil
       - intel-undervolt
-      - fastfetch
       - btop
       - gcc
       - git-credential-libsecret
-      - jetbrains-mono-fonts-all
       - lm_sensors
       - make
-      - neovim
-      - nerd-fonts
-      - rsms-inter-fonts
-      - rsms-inter-vf-fonts
       - usbmuxd
       - util-linux
+      - openssh-askpass
+      - inotify-tools
+      - tuned
+      - tuned-ppd
+      - fd-find
+      - ripgrep
+      - zoxide
+      - openrgb-udev-rules
+      # terminals and tools
+      - ghostty
       - kitty
-      - wl-clipboard
+      - wezterm
+      - fastfetch
+      - neovim
       - zsh
+      # graphical tools
+      - mpv
+      - playerctl
       - syncthing
+      - wl-clipboard
       - gnome-tweaks
       - gnome-shell-extension-pop-shell
       - gnome-shell-extension-pop-shell-shortcut-overrides
@@ -58,9 +73,7 @@ modules:
       - gnome-shell-extension-gpaste
       - gpaste
       - nautilus-gsconnect
-      - openssh-askpass
       - simple-scan
-      - yaru-theme
       - zenity
       # networking
       - NetworkManager-openconnect
@@ -74,12 +87,21 @@ modules:
       - wireguard-tools
       # Tailscale
       - tailscale
+      # waydroid
+      - waydroid
       # Docker
       - docker-ce
       - docker-ce-cli
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
+      # rocm
+      - rocminfo
+      - rocm-hip
+      # steam
+      - steam
+      - steam-devices
+      - gamescope
     optfix:
       - brave.com
     remove:
@@ -115,7 +137,7 @@ modules:
           - org.gnome.eog
 
   - type: brew
-    brew-analytics: false
+    brew-analytics: true
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
