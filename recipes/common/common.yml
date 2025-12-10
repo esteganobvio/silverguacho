@@ -10,18 +10,16 @@ modules:
       files:
         # Docker repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
-        # Ghostty
-        - https://copr.fedorainfracloud.org/coprs/scottames/ghostty/repo/fedora-%OS_VERSION%/scottames-ghostty-fedora-%OS_VERSION%.repo
-        # Wezterm
-        - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-        # Nerd fonts fallback
-        - https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-%OS_VERSION%/che-nerd-fonts-fedora-%OS_VERSION%.repo
         # Brave browser
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
         # Tailscale
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+      copr:
+        - wezfurlong/wezterm-nightly
+        - scottames/ghostty
+        - che/nerd-fonts
     install:
       skip-unavailable: true
       install-weak-deps: true
