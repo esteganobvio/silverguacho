@@ -3,12 +3,11 @@ name: silverguacho-nvidia
 # description will be included in the image's metadata
 description: SilverGuacho Image
 
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42
+base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia
+image-version: 43
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   - from-file: common/common.yml
   - from-file: common/virt-modules.yml
-  - from-file: common/nvidia.yml
   - from-file: common/os-release.yml

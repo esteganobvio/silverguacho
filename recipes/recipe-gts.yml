@@ -2,8 +2,10 @@
 name: silverguacho
 # description will be included in the image's metadata
 description: SilverGuacho Image
+alt-tags:
+  - gts
 base-image: ghcr.io/blue-build/base-images/fedora-silverblue
-image-version: 43
+image-version: gts
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
