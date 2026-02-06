@@ -105,8 +105,6 @@ modules:
         # steam
         - steam-devices
         - gamescope
-    optfix:
-      - brave.com
     remove:
       packages:
         - firefox
@@ -137,6 +135,7 @@ modules:
 
   - type: brew
     brew-analytics: true
+    direct-pull: true
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
