@@ -47,6 +47,7 @@ modules:
         - util-linux
         - openssh-askpass
         - inotify-tools
+        - tree-sitter-cli
         - tuned
         - tuned-ppd
         - fd-find
