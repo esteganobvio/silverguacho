@@ -18,7 +18,6 @@ modules:
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
       copr:
-        - wezfurlong/wezterm-nightly
         - scottames/ghostty
         - che/nerd-fonts
     install:
@@ -58,7 +57,6 @@ modules:
         # terminals and tools
         - ghostty
         - kitty
-        - wezterm
         - fastfetch
         - neovim
         - zsh
