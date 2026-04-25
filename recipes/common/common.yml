@@ -33,7 +33,6 @@ modules:
         # system tools
         - bootc
         - borgbackup
-        - brave-browser
         - keepassxc
         - ddcutil
         - intel-undervolt
@@ -90,17 +89,12 @@ modules:
         - wireguard-tools
         # Tailscale
         - tailscale
-        # waydroid
-        - waydroid
         # Docker
         - docker-ce
         - docker-ce-cli
         - containerd.io
         - docker-buildx-plugin
         - docker-compose-plugin
-        # rocm
-        - rocminfo
-        - rocm-hip
         # steam
         - steam-devices
         - gamescope
@@ -129,6 +123,9 @@ modules:
           - org.gnome.World.PikaBackup
           - org.gnome.seahorse.Application
           - org.localsend.localsend_app
+          - com.brave.Browser
+          - org.keepassxc.KeePassXC
+          - org.gnome.Characters
         remove:
           - org.gnome.eog
 
