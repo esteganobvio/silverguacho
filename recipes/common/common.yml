@@ -11,12 +11,8 @@ modules:
       files:
         # Docker repo
         - https://download.docker.com/linux/fedora/docker-ce.repo
-        # Brave browser
-        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
         # Tailscale
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      keys:
-        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
       copr:
         - scottames/ghostty
         - che/nerd-fonts
@@ -33,7 +29,6 @@ modules:
         # system tools
         - bootc
         - borgbackup
-        - keepassxc
         - ddcutil
         - intel-undervolt
         - btop
