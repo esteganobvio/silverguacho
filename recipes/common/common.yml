@@ -50,9 +50,7 @@ modules:
         - pipewire-alsa
         # terminals and tools
         - ghostty
-        - kitty
         - fastfetch
-        - neovim
         - zsh
         # graphical tools
         - mpv
